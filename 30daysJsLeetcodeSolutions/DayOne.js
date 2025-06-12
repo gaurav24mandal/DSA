@@ -55,3 +55,33 @@ var createCounter = function(init) {
      }
     }
 };
+
+//Remove Duplicates from Sorted Array
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    let i = 0 ;
+     for(let j = 1 ; j< nums.length ; j++){
+        if(nums[i] !==nums[j] ){
+            i++;
+            nums[i] = nums[j];
+        }
+    
+     }
+     return i+1;
+};
+
+//121. Best Time to Buy and Sell Stock
+var maxProfit = function(prices) {
+    let max = 0;
+    let minPrice = Infinity;
+      for(let i = 0; i< prices.length; i++){
+            if(prices[i]< minPrice){
+              minPrice = prices[i];
+            }
+        max = Math.max(max, prices[i] - minPrice);
+      }
+      return max
+};
